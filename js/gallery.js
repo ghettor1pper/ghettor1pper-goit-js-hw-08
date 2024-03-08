@@ -84,8 +84,7 @@ gallery.insertAdjacentHTML("afterbegin", markup);
 function handleClick(event) {
   event.preventDefault();
   const image = event.target;
-  if (image.classList.contains("gallery-image"));
-  {
+  if (image.classList.contains("gallery-image")) {
     const imageLarge = image.getAttribute("data-source");
     const instance = basicLightbox.create(`
  <img  src="${imageLarge}" width="1112" height="640"/>
