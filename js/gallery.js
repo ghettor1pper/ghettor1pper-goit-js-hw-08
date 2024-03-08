@@ -81,8 +81,18 @@ const markup = images
   )
   .join("");
 gallery.insertAdjacentHTML("afterbegin", markup);
-function handleClick (event) {
-    const image = event.target;
-    console.log('You clicked: ' + event.target);
+function handleClick(event) {
+  event.preventDefault();
+  const image = event.target;
+  if (image.classList.contains("gallery-image"));
+  {
+    const imageLarge = image.getAttribute("data-source");
+    const instance = basicLightbox.create(`
+ <img  src="${imageLarge}" width="1112" height="640"/>
+`);
+
+    instance.show();
+    console.log(imageLarge);
+  }
 }
-gallery.addEventListener("click", handleClick );
+gallery.addEventListener("click", handleClick);
